@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Académico UATF</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+body{
+background:linear-gradient(-45deg,#002b5b,#064ce4,#2f999c,#9267e49c);
+background-size:400% 400%;
+animation:gradiente 10s ease infinite;
+color:white;
+}
+
+@keyframes gradiente{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+.header{
+background:#001f3f;
+padding:20px;
+text-align:center;
+border-bottom:3px solid #00c6ff;
+}
+
+.header h1{font-size:22px;}
+.header h2{font-size:16px;color:#ccc;font-weight:normal;}
+
+/* MENU */
+.menu{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:15px;
+list-style:none;
+}
+
+.menu li{
+cursor:pointer;
+padding:8px 18px;
+border-radius:8px;
+transition:0.3s;
+}
+
+.menu li:hover{
+background:#6e96a1;
+color:black;
+transform:scale(1.1);
+}
+
+/* CONTENIDO */
+.container{display:none;padding:20px;}
+.active{display:block;}
+
+/* INICIO */
+.inicio-box{
+background:rgba(0,0,0,0.6);
+padding:50px 20px;
+border-radius:20px;
+text-align:center;
+margin-top:30px;
+}
+
+.logos-inicio{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:20px;
+}
+
+.logo-grande{
+height:120px;
+border-radius:50%;
+box-shadow:0 0 25px #00c6ff;
+transition:0.4s;
+}
+
+.logo-grande:hover{
+transform:scale(1.2);
+box-shadow:0 0 40px #161a3a;
+}
+
+/* TABLAS */
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+color:black;
+border-radius:10px;
+overflow:hidden;
+}
+
+th{
+background:#004aad;
+color:white;
+padding:10px;
+}
+
+td{
+padding:8px;
+text-align:center;
+}
+
+tr:nth-child(even){background:#f2f2f2;}
+tr:hover{background:#072f64;}
+
+input{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS</h1>
+<h2>LISTA DE DOCENTES </h2>
+
+<ul class="menu">
+<li onclick="mostrar('inicio')">Inicio</li>
+<li onclick="mostrar('docentes')">Docentes</li>
+<li onclick="mostrar('materias')">Materias</li>
+<li onclick="mostrar('auxiliares')">Auxiliares</li>
+</ul>
+</div>
+
+<!-- INICIO -->
+<div id="inicio" class="container active">
+<div class="inicio-box">
+
+<div class="logos-inicio">
+<img src="logo1.png" class="logo-grande">
+<img src="logo2.png" class="logo-grande">
+</div>
+
+<h1>🎓 SISTEMA ACADEMICO </h1>
+<h2> UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS </h2>
+<p>CARRERA DE INGENIERIA DE SISTEMAS </p>
+
+</div>
+</div>
+
+<!-- DOCENTES -->
+<div id="docentes" class="container">
+<h1>Docentes</h1>
+<input type="text" placeholder="Buscar..." onkeyup="buscar('tablaDocentes', this.value)">
+
+<table id="tablaDocentes">
+<tr><th>Nro</th><th>Docente</th><th>Materias</th><th>Horas</th></tr>
+
+<tr><td>1</td><td>Pacheco Álvarez Kary</td><td>LIN140</td><td contenteditable>17</td></tr>
+<tr><td>2</td><td>Colque Caballero Sabino</td><td>MAT100, MAT101, MAT204, SIS443</td><td>12</td></tr>
+<tr><td>3</td><td>Camacho Ocsachoque Nelly</td><td>MAT102, MAT206</td><td contenteditable>10</td></tr>
+<tr><td>4</td><td>Bravo Villafuerte Clever</td><td>SIS110, SIS211</td><td contenteditable>17</td></tr>
+<tr><td>5</td><td>Choque Matos Javier</td><td>SIS141, SIS313</td><td contenteditable>20</td></tr>
+<tr><td>6</td><td>Choque Mamani Porfirio</td><td>MAT101</td><td contenteditable>15</td></tr>
+<tr><td>7</td><td>Borja Mamani Raquel</td><td>MAT102</td><td contenteditable>12</td></tr>
+<tr><td>8</td><td>López Quentasi Jesús</td><td>SIS110</td><td contenteditable>17</td></tr>
+<tr><td>9</td><td>Puita Choque Gustavo</td><td>SIS141</td><td contenteditable>15</td></tr>
+<tr><td>10</td><td>Huayllas García Juana</td><td>LIN140</td><td contenteditable>12</td></tr>
+<tr><td>11</td><td>Huarachi Mamani Lidia</td><td>MAT102</td><td contenteditable>14</td></tr>
+<tr><td>12</td><td>Terrazas Quispe Wilfredo</td><td>SIS110</td><td contenteditable>12</td></tr>
+<tr><td>13</td><td>Sánchez Pérez Karina</td><td>SIS141</td><td contenteditable>13</td></tr>
+<tr><td>14</td><td>Ortega Reyes Efraín</td><td>MAT102</td><td contenteditable>14</td></tr>
+<tr><td>15</td><td>Mamani Huanaco Elías</td><td>FIS205</td><td contenteditable>15</td></tr>
+<tr><td>16</td><td>Pozo Hidalgo Ruth</td><td>MAT203</td><td contenteditable>17</td></tr>
+<tr><td>17</td><td>Velarde Flores Kimberly</td><td>SIS230</td><td contenteditable>17</td></tr>
+<tr><td>18</td><td>Ramos Castro Roberto</td><td>FIS205</td><td contenteditable>12</td></tr>
+<tr><td>19</td><td>Castro Angulo Ditmar</td><td>SIS211</td><td contenteditable>12</td></tr>
+<tr><td>20</td><td>Humérez Martínez David</td><td>SIS312</td><td contenteditable>17</td></tr>
+<tr><td>21</td><td>Choque Gutiérrez Juan</td><td>SIS342</td><td contenteditable>14</td></tr>
+<tr><td>22</td><td>Mamani Figueroa José</td><td>SIS313</td><td contenteditable>13</td></tr>
+<tr><td>23</td><td>Mercado Algarañaz Anny</td><td>SIS416</td><td contenteditable>15</td></tr>
+<tr><td>24</td><td>Choque Mamani Eduardo</td><td>SIS420</td><td contenteditable>13</td></tr>
+<tr><td>25</td><td>Claure Sempértegui Jenny</td><td>SIS517</td><td contenteditable>12</td></tr>
+<tr><td>26</td><td>Durán Miranda Javier</td><td>SIS523</td><td contenteditable>12</td></tr>
+<tr><td>27</td><td>Apaza Surculento Óscar</td><td>SIS633</td><td contenteditable>12</td></tr>
+<tr><td>28</td><td>Ruiz Molina Limber</td><td>SIS736</td><td contenteditable>12</td></tr>
+
+</table>
+</div>
+
+<!-- MATERIAS -->
+<div id="materias" class="container">
+<h1>Materias (51)</h1>
+<table>
+<tr><th>Nro</th><th>Sigla</th><th>Nombre</th></tr>
+
+<td>1</td><td>LIN140</td><td>Inglés Técnico</td></tr>
+<tr><td>2</td><td>MAT100</td><td>Álgebra</td></tr>
+<tr><td>3</td><td>MAT101</td><td>Cálculo I</td></tr>
+<tr><td>4</td><td>MAT102</td><td>Estadística I</td></tr>
+<tr><td>5</td><td>SIS110</td><td>Programación I</td></tr>
+<tr><td>6</td><td>SIS141</td><td>Computación Básica</td></tr>
+<tr><td>7</td><td>FIS205</td><td>Física I</td></tr>
+<tr><td>8</td><td>MAT203</td><td>Álgebra Lineal</td></tr>
+<tr><td>9</td><td>MAT204</td><td>Cálculo II</td></tr>
+<tr><td>10</td><td>MAT206</td><td>Estadística II</td></tr>
+<tr><td>11</td><td>SIS211</td><td>Programación II</td></tr>
+<tr><td>12</td><td>SIS230</td><td>Sistemas Contables</td></tr>
+<tr><td>13</td><td>FIS308</td><td>Física II</td></tr>
+<tr><td>14</td><td>MAT307</td><td>Cálculo III</td></tr>
+<tr><td>15</td><td>SIS312</td><td>Estructura de Datos</td></tr>
+<tr><td>16</td><td>SIS313</td><td>Programación Gráfica</td></tr>
+<tr><td>17</td><td>SIS331</td><td>Modelos Administrativos</td></tr>
+<tr><td>18</td><td>SIS342</td><td>Análisis Discreto</td></tr>
+<tr><td>19</td><td>SIS414</td><td>Tecnologías Emergentes</td></tr>
+<tr><td>20</td><td>SIS415</td><td>Base de Datos</td></tr>
+<tr><td>21</td><td>SIS416</td><td>Análisis de Sistemas I</td></tr>
+<tr><td>22</td><td>SIS420</td><td>Sistemas Digitales</td></tr>
+<tr><td>23</td><td>SIS421</td><td>Electrónica</td></tr>
+<tr><td>24</td><td>SIS443</td><td>Investigación Operativa I</td></tr>
+<tr><td>25</td><td>SIS517</td><td>Análisis de Sistemas II</td></tr>
+<tr><td>26</td><td>SIS518</td><td>Taller BD</td></tr>
+<tr><td>27</td><td>SIS522</td><td>Arquitectura</td></tr>
+<tr><td>28</td><td>SIS523</td><td>Redes I</td></tr>
+<tr><td>29</td><td>SIS532</td><td>Sistemas Operativos</td></tr>
+<tr><td>30</td><td>SIS544</td><td>Investigación II</td></tr>
+<tr><td>31</td><td>SIS624</td><td>Servidores</td></tr>
+<tr><td>32</td><td>SIS625</td><td>Taller Redes</td></tr>
+<tr><td>33</td><td>SIS633</td><td>Ingeniería Sistemas</td></tr>
+<tr><td>34</td><td>SIS634</td><td>Economía</td></tr>
+<tr><td>35</td><td>SIS645</td><td>Simulación</td></tr>
+<tr><td>36</td><td>SIS646</td><td>Software</td></tr>
+<tr><td>37</td><td>SIS710</td><td>Dinámica</td></tr>
+<tr><td>38</td><td>SIS719</td><td>Seminario</td></tr>
+<tr><td>39</td><td>SIS735</td><td>Auditoría</td></tr>
+<tr><td>40</td><td>SIS736</td><td>Proyectos</td></tr>
+<tr><td>41</td><td>SIS737</td><td>Seguridad</td></tr>
+<tr><td>42</td><td>SIS747</td><td>Metodología</td></tr>
+<tr><td>43</td><td>SIS838</td><td>Calidad</td></tr>
+<tr><td>44</td><td>SIS848</td><td>Práctica</td></tr>
+<tr><td>45</td><td>SIS849</td><td>Taller I</td></tr>
+<tr><td>46</td><td>SIS939</td><td>Forense</td></tr>
+<tr><td>47</td><td>SIS940</td><td>Taller II</td></tr>
+<tr><td>48</td><td>OPT001</td><td>Distribuidos</td></tr>
+<tr><td>49</td><td>OPT004</td><td>Criptografía</td></tr>
+<tr><td>50</td><td>OPT005</td><td>Robótica</td></tr>
+<tr><td>51</td><td>OPT015</td><td>Ética</td></tr>
+
+
+</table>
+</div>
+
+<!-- AUXILIARES -->
+<div id="auxiliares" class="container">
+<h1>Auxiliares</h1>
+<table>
+<tr><th>Materia</th><th>Auxiliar</th></tr>
+
+<div id="auxiliares" class="container">
+<h1>Auxiliares</h1>
+
+<table>
+<tr><th>Materia</th><th>Auxiliar</th></tr>
+
+<tr><td>LIN140</td><td>Juan Pérez</td></tr>
+<tr><td>MAT100</td><td>Ana Quispe</td></tr>
+<tr><td>MAT101</td><td>Carlos Mamani</td></tr>
+<tr><td>MAT102</td><td>Lucía Condori</td></tr>
+<tr><td>SIS110</td><td>Diego Flores</td></tr>
+<tr><td>SIS141</td><td>María Choque</td></tr>
+<tr><td>FIS205</td><td>Kevin Apaza</td></tr>
+<tr><td>MAT203</td><td>Sofía Ramos</td></tr>
+<tr><td>MAT204</td><td>José Cruz</td></tr>
+<tr><td>MAT206</td><td>Paola Vargas</td></tr>
+
+<tr><td>SIS211</td><td>Brayan López</td></tr>
+<tr><td>SIS230</td><td>Gabriela Ortiz</td></tr>
+<tr><td>FIS308</td><td>Fernando Rojas</td></tr>
+<tr><td>MAT307</td><td>Daniela Vega</td></tr>
+<tr><td>SIS312</td><td>Ricardo Herrera</td></tr>
+<tr><td>SIS313</td><td>Vanessa Aguilar</td></tr>
+<tr><td>SIS331</td><td>Jhonny Salazar</td></tr>
+<tr><td>SIS342</td><td>Erika Paredes</td></tr>
+
+<tr><td>SIS414</td><td>Marco Delgado</td></tr>
+<tr><td>SIS415</td><td>Natalia Medina</td></tr>
+<tr><td>SIS416</td><td>Luis Fernández</td></tr>
+<tr><td>SIS420</td><td>Andrea Pinto</td></tr>
+<tr><td>SIS421</td><td>Roberto Castillo</td></tr>
+<tr><td>SIS443</td><td>Claudia Herrera</td></tr>
+
+<tr><td>SIS517</td><td>Javier Morales</td></tr>
+<tr><td>SIS518</td><td>Camila Núñez</td></tr>
+<tr><td>SIS522</td><td>Eduardo Sánchez</td></tr>
+<tr><td>SIS523</td><td>Iván Torres</td></tr>
+<tr><td>SIS532</td><td>Patricia Ríos</td></tr>
+<tr><td>SIS544</td><td>Oscar Vargas</td></tr>
+
+<tr><td>SIS624</td><td>Daniel Quisbert</td></tr>
+<tr><td>SIS625</td><td>Raúl Mendoza</td></tr>
+<tr><td>SIS633</td><td>Alberto Chávez</td></tr>
+<tr><td>SIS634</td><td>Verónica León</td></tr>
+<tr><td>SIS645</td><td>Henry Cárdenas</td></tr>
+<tr><td>SIS646</td><td>Rosa Méndez</td></tr>
+
+<tr><td>SIS710</td><td>Julio Gutiérrez</td></tr>
+<tr><td>SIS719</td><td>Milton Rojas</td></tr>
+<tr><td>SIS735</td><td>Karina Poma</td></tr>
+<tr><td>SIS736</td><td>Elena Rocha</td></tr>
+<tr><td>SIS737</td><td>David Salinas</td></tr>
+<tr><td>SIS747</td><td>Paula Arce</td></tr>
+
+<tr><td>SIS838</td><td>Gustavo Romero</td></tr>
+<tr><td>SIS848</td><td>Luciano Flores</td></tr>
+<tr><td>SIS849</td><td>Andrea López</td></tr>
+<tr><td>SIS939</td><td>Cristian Vargas</td></tr>
+<tr><td>SIS940</td><td>Mario Aguilar</td></tr>
+
+<tr><td>OPT001</td><td>Diego Núñez</td></tr>
+<tr><td>OPT004</td><td>Camilo Pérez</td></tr>
+<tr><td>OPT005</td><td>Fernanda Rojas</td></tr>
+<tr><td>OPT015</td><td>Sandra Choque</td></tr>
+
+</table>
+</div>
+
+
+
+</table>
+</div>
+
+<script>
+function mostrar(id){
+document.querySelectorAll('.container').forEach(c=>c.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function buscar(tabla,texto){
+texto=texto.toLowerCase();
+let filas=document.querySelectorAll('#'+tabla+' tr');
+filas.forEach((f,i)=>{
+if(i===0)return;
+f.style.display=f.innerText.toLowerCase().includes(texto)?'':'none';
+});
+}
+</script>
+
+</body>
+</html>
