@@ -2,349 +2,249 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema Académico UATF</title>
+<title>KEVIN ALBERT PINTO RAMOS  | MI PERFIL </title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-background:linear-gradient(-45deg,#002b5b,#064ce4,#2f999c,#9267e49c);
-background-size:400% 400%;
-animation:gradiente 10s ease infinite;
-color:white;
+    background:black;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    cursor:none;
 }
 
-@keyframes gradiente{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-5;
 }
 
-/* HEADER */
-.header{
-background:#001f3f;
-padding:20px;
-text-align:center;
-border-bottom:3px solid #00c6ff;
+
+.cursor{
+    width:20px;height:20px;
+    border:2px solid #00f2fe;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:999;
 }
 
-.header h1{font-size:22px;}
-.header h2{font-size:16px;color:#ccc;font-weight:normal;}
 
-/* MENU */
-.menu{
-display:flex;
-justify-content:center;
-gap:25px;
-margin-top:15px;
-list-style:none;
+.light{
+    position:fixed;
+    width:400px;height:400px;
+    background: radial-gradient(circle, rgba(0,242,254,0.2), transparent);
+    pointer-events:none;
+    transform:translate(-50%,-50%);
 }
 
-.menu li{
-cursor:pointer;
-padding:8px 18px;
-border-radius:8px;
-transition:0.3s;
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-.menu li:hover{
-background:#6e96a1;
-color:black;
-transform:scale(1.1);
+
+.hero img{
+    width:320px;height:320px;
+    border-radius:50%;
+    border:4px solid #00f2fe;
+    box-shadow:0 0 60px #00f2fe;
 }
 
-/* CONTENIDO */
-.container{display:none;padding:20px;}
-.active{display:block;}
 
-/* INICIO */
-.inicio-box{
-background:rgba(0,0,0,0.6);
-padding:50px 20px;
-border-radius:20px;
-text-align:center;
-margin-top:30px;
+.hero h1{font-size:50px;margin-top:20px;}
+.hero p{opacity:0.7;}
+
+
+.section{
+    padding:60px 10%;
 }
 
-.logos-inicio{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-bottom:20px;
+
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:30px;
+    backdrop-filter:blur(15px);
+    transition:0.4s;
 }
 
-.logo-grande{
-height:120px;
-border-radius:50%;
-box-shadow:0 0 25px #00c6ff;
-transition:0.4s;
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 40px #00f2fe;
 }
 
-.logo-grande:hover{
-transform:scale(1.2);
-box-shadow:0 0 40px #161a3a;
+.card h2{
+    color:#00f2fe;
+    margin-bottom:10px;
 }
 
-/* TABLAS */
-table{
-width:100%;
-border-collapse:collapse;
-background:white;
-color:black;
-border-radius:10px;
-overflow:hidden;
+ul{list-style:none;}
+ul li{
+    margin:10px 0;
+    padding:10px;
+    border-left:3px solid #00f2fe;
 }
 
-th{
-background:#004aad;
-color:white;
-padding:10px;
-}
-
-td{
-padding:8px;
-text-align:center;
-}
-
-tr:nth-child(even){background:#f2f2f2;}
-tr:hover{background:#072f64;}
-
-input{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-border-radius:8px;
-border:none;
-}
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<h1>UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS</h1>
-<h2>LISTA DE DOCENTES </h2>
+<canvas id="galaxy"></canvas>
 
-<ul class="menu">
-<li onclick="mostrar('inicio')">Inicio</li>
-<li onclick="mostrar('docentes')">Docentes</li>
-<li onclick="mostrar('materias')">Materias</li>
-<li onclick="mostrar('auxiliares')">Auxiliares</li>
+<div class="cursor"></div>
+<div class="light"></div>
+
+
+<section class="hero">
+    <img id="foto" src="WhatsApp Image 2026-03-13 at 15.14.08.jpeg">
+    <h1>KEVIN ALBERT PINTO RAMOS </h1>
+    <p>FUTURO INGENIERO DE SISTEMAS </p>
+</section>
+
+<section class="section">
+
+
+<div class="card">
+<h2>Información Personal</h2>
+<p><b>Nombre:</b> Kevin Albert Pinto Ramos</p>
+<p><b>Carrera:</b> Ingeniería de Sistemas</p>
+<p><b>Universidad:</b> Universidad Tomás Frías</p>
+<p><b>Intereses:</b> Desarrollo web, software, innovación tecnológica</p>
+</div>
+
+
+<div class="card">
+<h2>Perfil Profesional</h2>
+<p>
+Soy estudiante de la Universidad Tomás Frías en la carrera de Ingeniería de Sistemas,
+con una fuerte pasión por la programación, el desarrollo de software y la tecnología.
+</p>
+
+<p>
+Me considero una persona autodidacta, con pensamiento lógico y creativo,
+enfocado en mejorar continuamente mis habilidades técnicas y desarrollar
+proyectos que aporten soluciones reales.
+</p>
+
+<p>
+Mi objetivo es convertirme en un desarrollador altamente competitivo,
+capaz de trabajar en entornos profesionales y participar en proyectos de gran impacto.
+</p>
+</div>
+
+
+<div class="card">
+<h2>¿Cómo me veo en 5 años?</h2>
+<ul>
+<li>Graduado como Ingeniero de Sistemas 🎓</li>
+<li>Trabajando como desarrollador en una empresa reconocida 💻</li>
+<li>Dominando tecnologías modernas (Full Stack) 🚀</li>
+<li>Participando en proyectos grandes e innovadores</li>
+<li>Con experiencia real en desarrollo de software</li>
+<li>Creando mis propios sistemas o emprendimientos tecnológicos</li>
+<li>Especializado en inteligencia artificial o ciberseguridad 🔐</li>
 </ul>
 </div>
 
-<!-- INICIO -->
-<div id="inicio" class="container active">
-<div class="inicio-box">
-
-<div class="logos-inicio">
-<img src="logo1.png" class="logo-grande">
-<img src="logo2.png" class="logo-grande">
-</div>
-
-<h1>🎓 SISTEMA ACADEMICO </h1>
-<h2> UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS </h2>
-<p>CARRERA DE INGENIERIA DE SISTEMAS </p>
-
-</div>
-</div>
-
-<!-- DOCENTES -->
-<div id="docentes" class="container">
-<h1>Docentes</h1>
-<input type="text" placeholder="Buscar..." onkeyup="buscar('tablaDocentes', this.value)">
-
-<table id="tablaDocentes">
-<tr><th>Nro</th><th>Docente</th><th>Materias</th><th>Horas</th></tr>
-
-<tr><td>1</td><td>Pacheco Álvarez Kary</td><td>LIN140</td><td contenteditable>17</td></tr>
-<tr><td>2</td><td>Colque Caballero Sabino</td><td>MAT100, MAT101, MAT204, SIS443</td><td>12</td></tr>
-<tr><td>3</td><td>Camacho Ocsachoque Nelly</td><td>MAT102, MAT206</td><td contenteditable>10</td></tr>
-<tr><td>4</td><td>Bravo Villafuerte Clever</td><td>SIS110, SIS211</td><td contenteditable>17</td></tr>
-<tr><td>5</td><td>Choque Matos Javier</td><td>SIS141, SIS313</td><td contenteditable>20</td></tr>
-<tr><td>6</td><td>Choque Mamani Porfirio</td><td>MAT101</td><td contenteditable>15</td></tr>
-<tr><td>7</td><td>Borja Mamani Raquel</td><td>MAT102</td><td contenteditable>12</td></tr>
-<tr><td>8</td><td>López Quentasi Jesús</td><td>SIS110</td><td contenteditable>17</td></tr>
-<tr><td>9</td><td>Puita Choque Gustavo</td><td>SIS141</td><td contenteditable>15</td></tr>
-<tr><td>10</td><td>Huayllas García Juana</td><td>LIN140</td><td contenteditable>12</td></tr>
-<tr><td>11</td><td>Huarachi Mamani Lidia</td><td>MAT102</td><td contenteditable>14</td></tr>
-<tr><td>12</td><td>Terrazas Quispe Wilfredo</td><td>SIS110</td><td contenteditable>12</td></tr>
-<tr><td>13</td><td>Sánchez Pérez Karina</td><td>SIS141</td><td contenteditable>13</td></tr>
-<tr><td>14</td><td>Ortega Reyes Efraín</td><td>MAT102</td><td contenteditable>14</td></tr>
-<tr><td>15</td><td>Mamani Huanaco Elías</td><td>FIS205</td><td contenteditable>15</td></tr>
-<tr><td>16</td><td>Pozo Hidalgo Ruth</td><td>MAT203</td><td contenteditable>17</td></tr>
-<tr><td>17</td><td>Velarde Flores Kimberly</td><td>SIS230</td><td contenteditable>17</td></tr>
-<tr><td>18</td><td>Ramos Castro Roberto</td><td>FIS205</td><td contenteditable>12</td></tr>
-<tr><td>19</td><td>Castro Angulo Ditmar</td><td>SIS211</td><td contenteditable>12</td></tr>
-<tr><td>20</td><td>Humérez Martínez David</td><td>SIS312</td><td contenteditable>17</td></tr>
-<tr><td>21</td><td>Choque Gutiérrez Juan</td><td>SIS342</td><td contenteditable>14</td></tr>
-<tr><td>22</td><td>Mamani Figueroa José</td><td>SIS313</td><td contenteditable>13</td></tr>
-<tr><td>23</td><td>Mercado Algarañaz Anny</td><td>SIS416</td><td contenteditable>15</td></tr>
-<tr><td>24</td><td>Choque Mamani Eduardo</td><td>SIS420</td><td contenteditable>13</td></tr>
-<tr><td>25</td><td>Claure Sempértegui Jenny</td><td>SIS517</td><td contenteditable>12</td></tr>
-<tr><td>26</td><td>Durán Miranda Javier</td><td>SIS523</td><td contenteditable>12</td></tr>
-<tr><td>27</td><td>Apaza Surculento Óscar</td><td>SIS633</td><td contenteditable>12</td></tr>
-<tr><td>28</td><td>Ruiz Molina Limber</td><td>SIS736</td><td contenteditable>12</td></tr>
-
-</table>
-</div>
-
-<!-- MATERIAS -->
-<div id="materias" class="container">
-<h1>Materias (51)</h1>
-<table>
-<tr><th>Nro</th><th>Sigla</th><th>Nombre</th></tr>
-
-<td>1</td><td>LIN140</td><td>Inglés Técnico</td></tr>
-<tr><td>2</td><td>MAT100</td><td>Álgebra</td></tr>
-<tr><td>3</td><td>MAT101</td><td>Cálculo I</td></tr>
-<tr><td>4</td><td>MAT102</td><td>Estadística I</td></tr>
-<tr><td>5</td><td>SIS110</td><td>Programación I</td></tr>
-<tr><td>6</td><td>SIS141</td><td>Computación Básica</td></tr>
-<tr><td>7</td><td>FIS205</td><td>Física I</td></tr>
-<tr><td>8</td><td>MAT203</td><td>Álgebra Lineal</td></tr>
-<tr><td>9</td><td>MAT204</td><td>Cálculo II</td></tr>
-<tr><td>10</td><td>MAT206</td><td>Estadística II</td></tr>
-<tr><td>11</td><td>SIS211</td><td>Programación II</td></tr>
-<tr><td>12</td><td>SIS230</td><td>Sistemas Contables</td></tr>
-<tr><td>13</td><td>FIS308</td><td>Física II</td></tr>
-<tr><td>14</td><td>MAT307</td><td>Cálculo III</td></tr>
-<tr><td>15</td><td>SIS312</td><td>Estructura de Datos</td></tr>
-<tr><td>16</td><td>SIS313</td><td>Programación Gráfica</td></tr>
-<tr><td>17</td><td>SIS331</td><td>Modelos Administrativos</td></tr>
-<tr><td>18</td><td>SIS342</td><td>Análisis Discreto</td></tr>
-<tr><td>19</td><td>SIS414</td><td>Tecnologías Emergentes</td></tr>
-<tr><td>20</td><td>SIS415</td><td>Base de Datos</td></tr>
-<tr><td>21</td><td>SIS416</td><td>Análisis de Sistemas I</td></tr>
-<tr><td>22</td><td>SIS420</td><td>Sistemas Digitales</td></tr>
-<tr><td>23</td><td>SIS421</td><td>Electrónica</td></tr>
-<tr><td>24</td><td>SIS443</td><td>Investigación Operativa I</td></tr>
-<tr><td>25</td><td>SIS517</td><td>Análisis de Sistemas II</td></tr>
-<tr><td>26</td><td>SIS518</td><td>Taller BD</td></tr>
-<tr><td>27</td><td>SIS522</td><td>Arquitectura</td></tr>
-<tr><td>28</td><td>SIS523</td><td>Redes I</td></tr>
-<tr><td>29</td><td>SIS532</td><td>Sistemas Operativos</td></tr>
-<tr><td>30</td><td>SIS544</td><td>Investigación II</td></tr>
-<tr><td>31</td><td>SIS624</td><td>Servidores</td></tr>
-<tr><td>32</td><td>SIS625</td><td>Taller Redes</td></tr>
-<tr><td>33</td><td>SIS633</td><td>Ingeniería Sistemas</td></tr>
-<tr><td>34</td><td>SIS634</td><td>Economía</td></tr>
-<tr><td>35</td><td>SIS645</td><td>Simulación</td></tr>
-<tr><td>36</td><td>SIS646</td><td>Software</td></tr>
-<tr><td>37</td><td>SIS710</td><td>Dinámica</td></tr>
-<tr><td>38</td><td>SIS719</td><td>Seminario</td></tr>
-<tr><td>39</td><td>SIS735</td><td>Auditoría</td></tr>
-<tr><td>40</td><td>SIS736</td><td>Proyectos</td></tr>
-<tr><td>41</td><td>SIS737</td><td>Seguridad</td></tr>
-<tr><td>42</td><td>SIS747</td><td>Metodología</td></tr>
-<tr><td>43</td><td>SIS838</td><td>Calidad</td></tr>
-<tr><td>44</td><td>SIS848</td><td>Práctica</td></tr>
-<tr><td>45</td><td>SIS849</td><td>Taller I</td></tr>
-<tr><td>46</td><td>SIS939</td><td>Forense</td></tr>
-<tr><td>47</td><td>SIS940</td><td>Taller II</td></tr>
-<tr><td>48</td><td>OPT001</td><td>Distribuidos</td></tr>
-<tr><td>49</td><td>OPT004</td><td>Criptografía</td></tr>
-<tr><td>50</td><td>OPT005</td><td>Robótica</td></tr>
-<tr><td>51</td><td>OPT015</td><td>Ética</td></tr>
-
-
-</table>
-</div>
-
-<!-- AUXILIARES -->
-<div id="auxiliares" class="container">
-<h1>Auxiliares</h1>
-<table>
-<tr><th>Materia</th><th>Auxiliar</th></tr>
-
-<div id="auxiliares" class="container">
-<h1>Auxiliares</h1>
-
-<table>
-<tr><th>Materia</th><th>Auxiliar</th></tr>
-
-<tr><td>LIN140</td><td>Juan Pérez</td></tr>
-<tr><td>MAT100</td><td>Ana Quispe</td></tr>
-<tr><td>MAT101</td><td>Carlos Mamani</td></tr>
-<tr><td>MAT102</td><td>Lucía Condori</td></tr>
-<tr><td>SIS110</td><td>Diego Flores</td></tr>
-<tr><td>SIS141</td><td>María Choque</td></tr>
-<tr><td>FIS205</td><td>Kevin Apaza</td></tr>
-<tr><td>MAT203</td><td>Sofía Ramos</td></tr>
-<tr><td>MAT204</td><td>José Cruz</td></tr>
-<tr><td>MAT206</td><td>Paola Vargas</td></tr>
-
-<tr><td>SIS211</td><td>Brayan López</td></tr>
-<tr><td>SIS230</td><td>Gabriela Ortiz</td></tr>
-<tr><td>FIS308</td><td>Fernando Rojas</td></tr>
-<tr><td>MAT307</td><td>Daniela Vega</td></tr>
-<tr><td>SIS312</td><td>Ricardo Herrera</td></tr>
-<tr><td>SIS313</td><td>Vanessa Aguilar</td></tr>
-<tr><td>SIS331</td><td>Jhonny Salazar</td></tr>
-<tr><td>SIS342</td><td>Erika Paredes</td></tr>
-
-<tr><td>SIS414</td><td>Marco Delgado</td></tr>
-<tr><td>SIS415</td><td>Natalia Medina</td></tr>
-<tr><td>SIS416</td><td>Luis Fernández</td></tr>
-<tr><td>SIS420</td><td>Andrea Pinto</td></tr>
-<tr><td>SIS421</td><td>Roberto Castillo</td></tr>
-<tr><td>SIS443</td><td>Claudia Herrera</td></tr>
-
-<tr><td>SIS517</td><td>Javier Morales</td></tr>
-<tr><td>SIS518</td><td>Camila Núñez</td></tr>
-<tr><td>SIS522</td><td>Eduardo Sánchez</td></tr>
-<tr><td>SIS523</td><td>Iván Torres</td></tr>
-<tr><td>SIS532</td><td>Patricia Ríos</td></tr>
-<tr><td>SIS544</td><td>Oscar Vargas</td></tr>
-
-<tr><td>SIS624</td><td>Daniel Quisbert</td></tr>
-<tr><td>SIS625</td><td>Raúl Mendoza</td></tr>
-<tr><td>SIS633</td><td>Alberto Chávez</td></tr>
-<tr><td>SIS634</td><td>Verónica León</td></tr>
-<tr><td>SIS645</td><td>Henry Cárdenas</td></tr>
-<tr><td>SIS646</td><td>Rosa Méndez</td></tr>
-
-<tr><td>SIS710</td><td>Julio Gutiérrez</td></tr>
-<tr><td>SIS719</td><td>Milton Rojas</td></tr>
-<tr><td>SIS735</td><td>Karina Poma</td></tr>
-<tr><td>SIS736</td><td>Elena Rocha</td></tr>
-<tr><td>SIS737</td><td>David Salinas</td></tr>
-<tr><td>SIS747</td><td>Paula Arce</td></tr>
-
-<tr><td>SIS838</td><td>Gustavo Romero</td></tr>
-<tr><td>SIS848</td><td>Luciano Flores</td></tr>
-<tr><td>SIS849</td><td>Andrea López</td></tr>
-<tr><td>SIS939</td><td>Cristian Vargas</td></tr>
-<tr><td>SIS940</td><td>Mario Aguilar</td></tr>
-
-<tr><td>OPT001</td><td>Diego Núñez</td></tr>
-<tr><td>OPT004</td><td>Camilo Pérez</td></tr>
-<tr><td>OPT005</td><td>Fernanda Rojas</td></tr>
-<tr><td>OPT015</td><td>Sandra Choque</td></tr>
-
-</table>
-</div>
-
-
-
-</table>
-</div>
+</section>
 
 <script>
-function mostrar(id){
-document.querySelectorAll('.container').forEach(c=>c.classList.remove('active'));
-document.getElementById(id).classList.add('active');
+
+
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+
+const light=document.querySelector(".light");
+document.addEventListener("mousemove",e=>{
+light.style.left=e.clientX+"px";
+light.style.top=e.clientY+"px";
+});
+
+
+const canvas=document.getElementById("galaxy");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+let meteors=[];
+
+for(let i=0;i<200;i++){
+    stars.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        size:Math.random()*2
+    });
 }
 
-function buscar(tabla,texto){
-texto=texto.toLowerCase();
-let filas=document.querySelectorAll('#'+tabla+' tr');
-filas.forEach((f,i)=>{
-if(i===0)return;
-f.style.display=f.innerText.toLowerCase().includes(texto)?'':'none';
-});
+
+const colors=["#00f2fe","#ff4d4d","#a64dff","#00ff99"];
+
+
+function createMeteor(){
+    meteors.push({
+        x:Math.random()*canvas.width,
+        y:-50,
+        len:Math.random()*80+50,
+        speed:Math.random()*5+3,
+        color:colors[Math.floor(Math.random()*colors.length)]
+    });
 }
+
+setInterval(createMeteor,400);
+
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    stars.forEach(s=>{
+        ctx.fillStyle="white";
+        ctx.fillRect(s.x,s.y,s.size,s.size);
+        s.y+=0.2;
+        if(s.y>canvas.height) s.y=0;
+    });
+
+
+    meteors.forEach((m,i)=>{
+        ctx.strokeStyle=m.color;
+        ctx.lineWidth=2;
+        ctx.beginPath();
+        ctx.moveTo(m.x,m.y);
+        ctx.lineTo(m.x+20,m.y+m.len);
+        ctx.stroke();
+
+        m.y+=m.speed;
+        m.x+=2;
+
+        if(m.y>canvas.height){
+            meteors.splice(i,1);
+        }
+    });
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+
 </script>
 
 </body>
