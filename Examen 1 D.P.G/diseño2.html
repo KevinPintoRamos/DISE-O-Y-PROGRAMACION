@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Seguridad</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #d9d9d9;
+}
+
+.container {
+    width: 700px;
+    margin: 40px auto;
+    border: 1px solid #555;
+    background: #f2f2f2;
+}
+
+.header {
+    background: linear-gradient(#b30000, #660000);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.form-box {
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #999;
+    background: #e6e6e6;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 150px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #777;
+    background: #ffffff;
+}
+
+input[readonly] {
+    background: #ccc;
+}
+
+.buttons {
+    margin: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    border: 1px solid #444;
+    background: linear-gradient(#999, #666);
+    color: white;
+    cursor: pointer;
+}
+
+button.primary {
+    background: linear-gradient(#cc0000, #800000);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">SEGURIDAD</div>
+
+    <div class="form-box">
+        <div class="row">
+            <label>USUARIO:</label>
+            <input type="text" value="kevin_pinto2005" readonly>
+
+            <label style="margin-left:20px;">CONTRASEÑA:</label>
+            <input type="password">
+        </div>
+
+        <div class="row">
+            <label>NOMBRE:</label>
+            <input type="text" value=">Kevin PintoS" readonly>
+        </div>
+
+        <div class="row">
+            <label>DESCRIPCIÓN:</label>
+            <input type="text" style="width:300px;">
+        </div>
+
+        <div class="row">
+            <label>TIPO:</label>
+            <input type="radio" name="t"> Operador
+            <input type="radio" name="t"> Administrador
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button>Primero</button>
+        <button>Anterior</button>
+        <button class="primary">Editar</button>
+        <button>Guardar</button>
+        <button>Salir</button>
+    </div>
+</div>
+
+</body>
+</html>

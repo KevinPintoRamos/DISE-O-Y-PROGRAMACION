@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grupo Contable</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #d9d9d9;
+}
+
+.container {
+    width: 800px;
+    margin: 30px auto;
+    border: 1px solid #555;
+    background: #f2f2f2;
+}
+
+.top-bar {
+    background: #333;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.sub-bar {
+    background: linear-gradient(#999, #666);
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.header {
+    background: linear-gradient(#b30000, #660000);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.content {
+    padding: 15px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: #333;
+}
+
+input, select, textarea {
+    border: 1px solid #777;
+    background: #fff;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.small {
+    width: 50px;
+}
+
+.large {
+    width: 300px;
+}
+
+textarea {
+    width: 300px;
+    height: 60px;
+}
+
+.table-box {
+    margin-top: 15px;
+    border: 1px solid #444;
+    width: 450px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #800000;
+    color: white;
+    padding: 5px;
+}
+
+td {
+    border: 1px solid #999;
+    padding: 4px;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 6px 15px;
+    border: 1px solid #444;
+    background: linear-gradient(#999, #666);
+    color: white;
+}
+
+button.primary {
+    background: linear-gradient(#cc0000, #800000);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-bar">GRUPOS CONTABLES</div>
+    <div class="sub-bar">UNIDAD: 0252 - Nivel Central</div>
+    <div class="header">GRUPO CONTABLE</div>
+
+    <div class="content">
+        <div class="row">
+            <label>Grupo</label>
+            <input class="small" type="text" value="2">
+
+            <label style="margin-left:20px;">Nombre</label>
+            <select class="large">
+                <option>MUEBLES Y ENSERES</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label>Vida Útil</label>
+            <input class="small" type="text" value="10">
+
+            <label style="margin-left:20px;">Observaciones</label>
+            <textarea></textarea>
+        </div>
+
+        <div class="row">
+            <label>Deprecia</label>
+            <input type="checkbox" checked>
+        </div>
+
+        <div class="table-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>NOMBRE AUXILIAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Calefaxion</td></tr>
+                    <tr><td>2</td><td>comida</td></tr>
+                    <tr><td>3</td><td>Alfombra</td></tr>
+                    <tr><td>4</td><td>Armario</td></tr>
+                    <tr><td>5</td><td>Aspiradora</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="buttons">
+            <button>Nuevo</button>
+            <button class="primary">Modificar</button>
+            <button>Eliminar</button>
+            <button>Salir</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
